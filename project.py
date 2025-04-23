@@ -14,7 +14,7 @@ import os
 def main():
     root=tk.Tk()
     root.title("Expense Tracker App")
-    root.geometry("400*300")
+    root.geometry("400x300")
 
     #labels and entries
     tk.Label(root, text="Expense:").grid(row=0, column=0, padx=10, pady=5)
@@ -32,11 +32,8 @@ def main():
 
     tk.Label(root, text="Date (DD-MM-YYYY):").grid(row=3, column=0, padx=10, pady=5)
     date_entry = tk.Entry(root)
-    date_entry.grid(row=3, column=1)
-
-    def load_categories():
-        pass
-    
+    date_entry.grid(row=3, column=1)  
+        
     def submit_expense():
         expense=expense_entry.get()
         amount=amount_entry.get()
@@ -49,10 +46,21 @@ def main():
             return
         CreateExp(expense, amount, category, date)
 
-        tk.Button(root, text="Add Expense", command=submit_expense).grid(row=4, column=1, pady=20)
+    #adding the submit button
+    tk.Button(root, text="Add Expense", command=submit_expense).grid(row=4, column=1, pady=20)
 
+    #this is to show the first value as the default in categories
+    if categories:
+        category_cb.current(0)
     root.mainloop()
-        
+
+#This function will load categories from categories csv
+def load_categories():
+    df = pd.read_csv('data/categories.csv')
+    categories=[]
+    for cat in df['Category'].values:
+        categories.append(cat)
+    return categories        
 
 #This is the function that actually create the database and adds to the database    
 def CreateExp(expense, amount, category, date):
@@ -95,7 +103,7 @@ def CreateNewCat():
         newCat={'Category':[temp]}
         df = pd.DataFrame(newCat)
         # Append the new category to the CSV file
-        df.to_csv('data/categories.csv', mode='a', header=False, index=False)
+        df.to_csv('data/categories.csv', mode='a',header=not os.path.exists('data/categories.csv'),index=False)
         messagebox.showinfo("Success", "Category added successfully")   
         
         
@@ -105,5 +113,7 @@ def CreateNewCat():
 def CreatePlot():
     ...
 
-
+#necessary for running ensuring that the program runs properly
+if __name__ == "__main__":
+    main()
     
