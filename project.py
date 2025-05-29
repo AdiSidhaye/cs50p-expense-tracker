@@ -54,11 +54,11 @@ def main():
             messagebox.showerror("Error", "Date must be in DD-MM-YYYY format")
             return
                 
-        try:
-            amount = float(amount)
-        except ValueError:
-            messagebox.showerror("Error", "Amount must be a number")
-            return
+        # try:
+        #     amount = float(amount)
+        # except ValueError:
+        #     messagebox.showerror("Error", "Amount must be a number")
+        #     return
         
         CreateExp(expense, amount, category, date)
 
@@ -105,7 +105,7 @@ def CreateExp(expense, amount, category, date_entry):
         
         newExpense = {
             'Expense': [expense],
-            'Amount': [amount],
+            'Amount': [float(amount)],
             'Category': [category],
             #'Date': [date]
             'Date': [date_entry]
@@ -153,10 +153,14 @@ def CreateNewCat(cat):
     if temp.lower() in [c.lower() for c in df['Category'].tolist()]:
             messagebox.showerror("Error", "Category already exists")
             return
+    if temp=="":
+            messagebox.showerror("Error", "Please enter new category")
+            return
     if temp==nan:
             messagebox.showerror("Error", "Please enter new category")
             return
     # Add the new category to the DataFrame
+    
 
     
     # newCat={'Category':[temp]}

@@ -1,0 +1,11 @@
+Expense,Amount,Category,Date
+Test1,300.0,Education,05-05-2025
+Test2,400.0,Entertainment,06-05-2025
+Test4,402.0,Living,05-05-2025
+Test4,402.0,Living,05-05-2025
+dfs,444.0,Travel,2025-01-01
+Test5,3434.0,Travel,01-01-2025
+Test5,3434.0,Travel,01-01-2025
+Test6,400.0,Personal,11-05-2025
+Fees,5000.0,Personal,27-05-2025
+Test8,400.0,Personal,28-05-2025
