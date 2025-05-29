@@ -44,21 +44,6 @@ This is a simple expense tracker application built in Python as a final project 
 
 ---
 
-## 🏃‍♂️ How to Run
-
-### 1. Clone the repo:
-```bash
-git clone <your-repo-url>
-cd CS50_expense_tracker
-2. Install dependencies (if needed):
-pip install pandas matplotlib
-3. Run the app:
-python project.py
-4. Run tests:
-pytest test_project.py
-
----
-
 ✅ Future Improvements
 
 -Add data filtering by date
@@ -73,3 +58,19 @@ pytest test_project.py
 Harvard’s CS50P: Introduction to Programming with Python
 
 ---
+
+---
+
+## 🏃‍♂️ How to Run
+
+### 1. Clone the repo:
+```bash
+git clone <your-repo-url>
+cd CS50_expense_tracker
+2. Install dependencies (if needed):
+pip install pandas matplotlib
+3. Run the app:
+python project.py
+4. Run tests:
+pytest test_project.py
+
