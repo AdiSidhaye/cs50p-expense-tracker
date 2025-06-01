@@ -1,5 +1,6 @@
 # 💸 Expense Tracker (CS50P Final Project)
 
+Video URL - https://youtu.be/tGHQLoY2JKs
 This is a simple expense tracker application built in Python as a final project for Harvard's CS50P course. The application allows users to:
 
 - Add new expenses  
@@ -40,7 +41,8 @@ This is a simple expense tracker application built in Python as a final project 
 ---
 
 ## 🖼️ Screenshot
-![Expense Tracker GUI](images/gui_screenshot.png)
+<img width="554" alt="image" src="https://github.com/user-attachments/assets/21233e15-e074-47e9-af64-5c31687594ea" />
+
 
 ---
 
